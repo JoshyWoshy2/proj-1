@@ -1,0 +1,19 @@
+make random word and store it as variable
+
+display word.length to player
+
+correctGuesses < word.length
+
+user guess letter
+
+if right correctGuesses++
+
+if wrong incorrectGuesses++
+
+hang some man if appropriate
+
+if incorrect > 8 tell them they lose, and a man is dead
+
+if correct === word.length tell them they win, man is not dead
+
+offer reset ("new game")
