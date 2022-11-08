@@ -141,15 +141,16 @@ let wordList = [
 
 //EventListener
 document.addEventListener("click", handleClick);
-
 //137 words
 function wordPicker() {
   let number = Math.floor(Math.random() * 137);
   return wordList[number];
 }
 function handleClick(event) {
+  console.log(event.target);
   if (event.target.classList.contains("letter")) {
     console.log("letter");
-  } else if (event.target.getElementById()) {
+  } else if (event.target.matches("button")) {
+    console.log("reset");
   }
 }
