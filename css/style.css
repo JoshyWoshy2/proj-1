@@ -15,11 +15,18 @@ h4 {
   display: flex;
   width: 80%;
   height: 300px;
+  margin: 0 auto;
 }
 #word {
   display: flex;
   width: 80%;
   height: 50px;
+  margin: 0 auto;
+}
+#restart {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 #board {
   display: grid;

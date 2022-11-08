@@ -138,8 +138,18 @@ let wordList = [
   "violence",
   "x marks the spot",
 ];
+
+//EventListener
+document.addEventListener("click", handleClick);
+
 //137 words
 function wordPicker() {
   let number = Math.floor(Math.random() * 137);
   return wordList[number];
+}
+function handleClick(event) {
+  if (event.target.classList.contains("letter")) {
+    console.log("letter");
+  } else if (event.target.getElementById()) {
+  }
 }
