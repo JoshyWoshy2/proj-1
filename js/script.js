@@ -41,18 +41,18 @@ let wordList = [
   "dagger",
   "danger",
   "deck",
-  "desert island",
+  "desert-island",
   "dishonest",
   "doubloon",
   "earring",
   "escape",
   "evil",
   "explore",
-  "eye patch",
+  "eye-patch",
   "fear",
   "ferocious",
   "fight",
-  "first mate",
+  "first-mate",
   "flag",
   "fleet",
   "fortune",
@@ -61,7 +61,7 @@ let wordList = [
   "gun",
   "gunpowder",
   "heist",
-  "high seas",
+  "high-seas",
   "hijack",
   "hook",
   "horizon",
@@ -83,10 +83,10 @@ let wordList = [
   "merchant",
   "mutiny",
   "navigate",
-  "new world",
+  "new-world",
   "notorious",
   "ocean",
-  "old world",
+  "old-world",
   "outcasts",
   "overboard",
   "parrot",
@@ -124,7 +124,7 @@ let wordList = [
   "treachery",
   "treasure",
   "truce",
-  "skull and bones",
+  "skull-and-bones",
   "steal",
   "swagger",
   "swashbuckling",
@@ -136,7 +136,7 @@ let wordList = [
   "vile",
   "villain",
   "violence",
-  "x marks the spot",
+  "x-marks-the-spot",
 ];
 let theChosenOne = wordPicker();
 let maxWrong = 6;
@@ -163,13 +163,9 @@ function wordDisplay() {
 console.log({ pickedWord });
 console.log({ currentWord });
 function handleClick(event) {
-  //   console.log(event.target);
   if (event.target.classList.contains("letter")) {
-    //1 value of clicked div = guessed
-    // console.log("here1");
     guessed = event.target.innerHTML.toLowerCase();
     console.log(guessed);
-    //2 compare to theChosenOne
     if (pickedWord.includes(guessed)) {
       //3 if matches character in answer
       ////1 show character location in word display
@@ -181,27 +177,20 @@ function handleClick(event) {
         document.getElementById("text").innerHTML =
           "Congatulations! You've saved our pirate pal!";
       }
-    } else if (pickedWord.indexOf(guessed) === -1) {
-      // console.log({ guessed });
-
       //4 if no match
+    } else if (pickedWord.indexOf(guessed) === -1) {
       ////1 mistakes++
       mistakes++;
       ////2 check if game lost
-      // console.log(pickedWord.indexOf(guessed));
-      // console.log(mistakes);
       if (mistakes === maxWrong) {
         document.getElementById("text").innerHTML =
           "He's dead, the answer was " + theChosenOne;
       }
       ////3 hang him a lil
-      //1 reset
     }
+    //1 reset
   } else if (event.target.matches("button")) {
     mistakes = 0;
     guessed = [];
   }
 }
-// console.log(mistakes);
-// console.log(theChosenOne);
-// console.log(wordDisplay());
