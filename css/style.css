@@ -59,3 +59,6 @@ h4 {
   height: 30px;
   border: 1px solid black;
 }
+#theme {
+  opacity: 0.5;
+}

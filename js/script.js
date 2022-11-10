@@ -138,6 +138,8 @@ let wordList = [
   "violence",
   "x-marks-the-spot",
 ];
+let audio = document.getElementById("theme");
+audio.volume = 0.2;
 let theChosenOne = wordPicker();
 let maxWrong = 6;
 let mistakes = 0;
@@ -190,6 +192,5 @@ function handleClick(event) {
     currentWord = wordDisplay();
     document.getElementById("pirate").src = "/images/0.jpeg";
     display();
-    ////3 hang him a lil
   }
 }
