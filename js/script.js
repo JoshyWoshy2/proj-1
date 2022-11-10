@@ -142,7 +142,6 @@ let theChosenOne = wordPicker();
 let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
-let wordStatus = null;
 let pickedWord = theChosenOne.split("");
 let currentWord = wordDisplay();
 //EventListener
@@ -167,30 +166,35 @@ function handleClick(event) {
     guessed = event.target.innerHTML.toLowerCase();
     console.log(guessed);
     if (pickedWord.includes(guessed)) {
-      //3 if matches character in answer
-      ////1 show character location in word display
       letterIdx = pickedWord.indexOf(guessed);
       currentWord.splice(letterIdx, 1, guessed);
+      console.log(letterIdx);
+      // console.log(currentWord);
+      // currentWord = pickedWord.map((letter) =>
+      //   guessed.indexOf(letter) >= 0 ? letter : " _ "
+      // );
+      // console.log(currentWord);
       display();
-      ////2 check if word is complete
       if (currentWord.join("") === theChosenOne) {
         document.getElementById("text").innerHTML =
           "Congatulations! You've saved our pirate pal!";
       }
-      //4 if no match
     } else if (pickedWord.indexOf(guessed) === -1) {
-      ////1 mistakes++
       mistakes++;
-      ////2 check if game lost
       if (mistakes === maxWrong) {
         document.getElementById("text").innerHTML =
           "He's dead, the answer was " + theChosenOne;
       }
       ////3 hang him a lil
+      // document.getElementById("hangmanPic").src =
+      //   "./images/" + mistakes + ".jpg";
     }
     //1 reset
   } else if (event.target.matches("button")) {
+    console.log("button");
     mistakes = 0;
     guessed = [];
+    wordPicker();
+    wordDisplay();
   }
 }
