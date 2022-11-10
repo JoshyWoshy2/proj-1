@@ -176,7 +176,7 @@ function handleClick(event) {
       }
     } else {
       mistakes++;
-      document.getElementById("pirate").src = "./assets/" + mistakes + ".jpeg";
+      document.getElementById("pirate").src = "assets/" + mistakes + ".jpeg";
       if (mistakes === maxWrong) {
         document.getElementById("text").innerHTML =
           "He's dead, the answer was " + theChosenOne;
@@ -190,7 +190,7 @@ function handleClick(event) {
     theChosenOne = wordPicker();
     pickedWord = theChosenOne.split("");
     currentWord = wordDisplay();
-    document.getElementById("pirate").src = "./assets/0.jpeg";
+    document.getElementById("pirate").src = "assets/0.jpeg";
     display();
   }
 }
