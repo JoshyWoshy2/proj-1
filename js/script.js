@@ -144,14 +144,12 @@ let mistakes = 0;
 let guessed = [];
 let pickedWord = theChosenOne.split("");
 let currentWord = wordDisplay();
-//EventListener
 document.addEventListener("click", handleClick);
-//137 words
 function display() {
   document.getElementById("word").innerHTML = currentWord.join("");
 }
 function wordPicker() {
-  let number = Math.floor(Math.random() * 137);
+  let number = Math.floor(Math.random() * wordList.length);
   return wordList[number];
 }
 display(wordDisplay());
@@ -162,39 +160,37 @@ function wordDisplay() {
 console.log({ pickedWord });
 console.log({ currentWord });
 function handleClick(event) {
+  let clickedThingy = event.target.innerHTML.toLowerCase();
   if (event.target.classList.contains("letter")) {
-    guessed = event.target.innerHTML.toLowerCase();
-    console.log(guessed);
-    if (pickedWord.includes(guessed)) {
-      letterIdx = pickedWord.indexOf(guessed);
-      currentWord.splice(letterIdx, 1, guessed);
-      console.log(letterIdx);
-      // console.log(currentWord);
-      // currentWord = pickedWord.map((letter) =>
-      //   guessed.indexOf(letter) >= 0 ? letter : " _ "
-      // );
-      // console.log(currentWord);
+    guessed.push(clickedThingy);
+    if (pickedWord.includes(clickedThingy)) {
+      currentWord = pickedWord.map((letter) => {
+        return guessed.includes(letter) ? letter : " _ ";
+      });
       display();
       if (currentWord.join("") === theChosenOne) {
         document.getElementById("text").innerHTML =
           "Congatulations! You've saved our pirate pal!";
       }
-    } else if (pickedWord.indexOf(guessed) === -1) {
+    } else {
       mistakes++;
       if (mistakes === maxWrong) {
         document.getElementById("text").innerHTML =
           "He's dead, the answer was " + theChosenOne;
       }
-      ////3 hang him a lil
-      // document.getElementById("hangmanPic").src =
-      //   "./images/" + mistakes + ".jpg";
     }
-    //1 reset
   } else if (event.target.matches("button")) {
-    console.log("button");
+    //1 reset
+    document.getElementById("text").innerHTML =
+      "Pick a letter, and try to save the poor lad.";
     mistakes = 0;
     guessed = [];
-    wordPicker();
-    wordDisplay();
+    theChosenOne = wordPicker();
+    pickedWord = theChosenOne.split("");
+    currentWord = wordDisplay();
+    display();
+    ////3 hang him a lil
+    // document.getElementById("hangmanPic").src =
+    //   "./images/" + mistakes + ".jpg";
   }
 }
