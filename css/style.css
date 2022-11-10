@@ -1,21 +1,27 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-image: url("/images/background.jpeg");
+}
 h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: coral;
 }
 h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: coral;
 }
 #gibbet {
   display: flex;
   width: 80%;
   height: 300px;
   margin: 0 auto;
+  justify-content: center;
 }
 #word {
   display: flex;
@@ -25,13 +31,19 @@ h4 {
   justify-content: center;
   align-items: center;
   font-size: 50px;
+  color: coral;
 }
 #restart {
+  color: coral;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   width: 100%;
+  opacity: 0.5;
 }
 #board {
+  font-size: 30px;
+  color: coral;
   display: grid;
 }
 .row {

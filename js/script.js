@@ -174,13 +174,13 @@ function handleClick(event) {
       }
     } else {
       mistakes++;
+      document.getElementById("pirate").src = "/images/" + mistakes + ".jpeg";
       if (mistakes === maxWrong) {
         document.getElementById("text").innerHTML =
           "He's dead, the answer was " + theChosenOne;
       }
     }
   } else if (event.target.matches("button")) {
-    //1 reset
     document.getElementById("text").innerHTML =
       "Pick a letter, and try to save the poor lad.";
     mistakes = 0;
@@ -188,9 +188,8 @@ function handleClick(event) {
     theChosenOne = wordPicker();
     pickedWord = theChosenOne.split("");
     currentWord = wordDisplay();
+    document.getElementById("pirate").src = "/images/0.jpeg";
     display();
     ////3 hang him a lil
-    // document.getElementById("hangmanPic").src =
-    //   "./images/" + mistakes + ".jpg";
   }
 }
