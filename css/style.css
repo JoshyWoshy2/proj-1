@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("../images/background.jpeg");
+  background-image: url("../assets/background.jpeg");
 }
 h1 {
   display: flex;
