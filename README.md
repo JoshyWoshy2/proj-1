@@ -14,16 +14,16 @@ hit restart to reset the board.
 ![hanging-win](https://github.com/JoshyWoshy2/proj-1/blob/pub-man/hanging-win.png?raw=true)
 
 ## Technology Used
-JavaScript
-HTML
-CSS
-Underscore.js
+JavaScript.
+HTML.
+CSS.
+Underscore.js.
 
 ## Icebox
-More pirate to theme
-guesscounter 
-letter counter
-wrong counter
+More pirate to theme.
+guesscounter. 
+letter counter.
+wrong counter.
 use as front for another pirate based game.
 
 ## credits
